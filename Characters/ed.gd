@@ -50,4 +50,5 @@ func _on_Clock_spawn_timer_timeout():
 	ysort.add_child(spwaned_clock)
 	spwaned_clock.global_position = position
 	var spawn_adjust = floor(GameState.time_counter/60)  
-	$Clock_spawn_timer.start(rand_range(clock_spawn_min-spawn_adjust,clock_spawn_max-spawn_adjust))
+	$Clock_spawn_timer.start(rand_range(
+		max(clock_spawn_min-spawn_adjust, 0.1),max(clock_spawn_max-spawn_adjust,1)))

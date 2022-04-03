@@ -2,6 +2,7 @@ extends Area2D
 
 var clock_indicator = preload("res://Effects/ClockIndicator.tscn")
 const ExplodeEffect = preload("res://Effects/Clock_Explosion.tscn")
+export var SE_clock_noise : AudioStreamSample
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Sprite.frame = randi() % 5
@@ -23,6 +24,7 @@ func _input_event(viewport, event, shape_idx):
 		main.add_child(effect)
 		effect.global_position = global_position
 		GameState.clocks_shot += 1
+		$SE_player.play_sound_effect(SE_clock_noise)
 		queue_free()
 
 
