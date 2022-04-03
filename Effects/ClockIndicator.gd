@@ -12,7 +12,7 @@ func _process(delta):
 	if(time_remaining <= 0):
 		GameState.go_to_game_over()
 		time_remaining = 0
-	elif(time_remaining <= timer_max_wait_time*0.25):
+	elif(time_remaining <= timer_max_wait_time*0.25) and !GameState.is_game_over:
 		$SE_player.play_sound_effect(SE_clock_noise)
 	var time_intensity = (timer_max_wait_time-time_remaining)/timer_max_wait_time
 	$Sprite/Clock_hand.rotation_degrees = time_intensity*360

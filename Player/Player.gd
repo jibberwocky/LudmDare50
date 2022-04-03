@@ -1,7 +1,6 @@
 extends KinematicBody2D
 
 export var move_speed := 10000
-export var jump_power := 1000
 export var FRICTION := 2000
 
 const GRAVITY := 100
