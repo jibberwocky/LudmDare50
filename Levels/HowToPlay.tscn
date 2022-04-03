@@ -1,0 +1,128 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Themes/Button Theme.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Fonts/Pixel-Western.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Art/Background_BG.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Art/sky.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Art/The Sun.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Music/Main Menu.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Levels/Credits.gd" type="Script" id=7]
+[ext_resource path="res://Assets/Art/Clocks.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Art/Effect.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Art/Crosshair.png" type="Texture" id=10]
+
+[sub_resource type="DynamicFont" id=5]
+size = 8
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_top = 8
+extra_spacing_char = 1
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=6]
+default_font = SubResource( 5 )
+
+[node name="AssetCredits" type="Control"]
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sky" type="Sprite" parent="."]
+position = Vector2( 163, 136 )
+texture = ExtResource( 4 )
+
+[node name="BackgroundBg" type="Sprite" parent="Sky"]
+position = Vector2( 45, -9 )
+texture = ExtResource( 3 )
+
+[node name="Control" type="Control" parent="."]
+anchor_top = -1.0
+margin_left = -1.0
+margin_top = 2.0
+margin_right = 320.0
+margin_bottom = 183.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TheSun" type="Sprite" parent="Control"]
+position = Vector2( 35, 21 )
+texture = ExtResource( 5 )
+
+[node name="Crosshair" type="Sprite" parent="Control/TheSun"]
+position = Vector2( -8, -14 )
+texture = ExtResource( 10 )
+
+[node name="Effect" type="Sprite" parent="Control/TheSun"]
+position = Vector2( -27, -13 )
+texture = ExtResource( 9 )
+hframes = 4
+
+[node name="Effect2" type="Sprite" parent="Control/TheSun"]
+position = Vector2( 27, -15 )
+texture = ExtResource( 9 )
+hframes = 4
+
+[node name="Clocks" type="Sprite" parent="Control/TheSun/Effect2"]
+position = Vector2( 112, 2 )
+texture = ExtResource( 8 )
+
+[node name="Crosshair" type="Sprite" parent="Control/TheSun/Effect2"]
+position = Vector2( 76, -3 )
+texture = ExtResource( 10 )
+
+[node name="Label2" type="Label" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -151.5
+margin_top = -77.5
+margin_right = 160.5
+margin_bottom = 106.5
+theme = SubResource( 6 )
+text = "You're set to duel the fastest shot in the west. With no hope of winning you're left with one choice.
+Delay High Noon as long as possible.
+
+Shoot The Sun with THE MOUSE to keep it out of the midday sky! You may need to move with WASD to keep your eye on it
+
+Several people in town have taken up the latest hobby of collecting clocks! Shoot any clock before it can strike 12!
+"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control2" type="Control" parent="."]
+anchor_top = -1.0
+margin_left = 2.0
+margin_right = 321.0
+margin_bottom = 179.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Play_button" type="Button" parent="Control2"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 126.0
+margin_top = -170.0
+margin_right = 126.0
+margin_bottom = -162.0
+rect_pivot_offset = Vector2( 51, 6 )
+theme = ExtResource( 1 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -2.0
+
+[connection signal="pressed" from="Control2/Play_button" to="." method="_on_Play_button_pressed"]

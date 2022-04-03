@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Gutiar.mp3-13927a2b8c81bb1998f57210f36eadef.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Gutiar.mp3"
+dest_files=[ "res://.import/Gutiar.mp3-13927a2b8c81bb1998f57210f36eadef.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

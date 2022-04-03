@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Art/SixShooyer.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Art/shoulder.png" type="Texture" id=2]
+[ext_resource path="res://Player/ArmPeice.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/Arm_end.tscn" type="PackedScene" id=5]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 5, 5 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="SixShooter" type="Node2D"]
+position = Vector2( 27, 6 )
+
+[node name="ArmPeice" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, 3 )
+
+[node name="Joint" parent="ArmPeice/Collision" index="0"]
+node_a = NodePath("../..")
+node_b = NodePath("../../../ArmPeice2")
+
+[node name="ArmPeice2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, 7 )
+
+[node name="Joint" parent="ArmPeice2/Collision" index="0"]
+node_a = NodePath("../..")
+node_b = NodePath("../../../ArmPeice3")
+
+[node name="ArmPeice3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, 7 )
+
+[node name="Joint" parent="ArmPeice3/Collision" index="0"]
+node_a = NodePath("../..")
+node_b = NodePath("../../../HandEnd")
+
+[node name="HandEnd" parent="." instance=ExtResource( 5 )]
+position = Vector2( 0, 11 )
+
+[node name="SixShooter" type="AnimatedSprite" parent="HandEnd"]
+position = Vector2( -1, 1 )
+rotation = -1.5708
+frames = SubResource( 2 )
+
+[node name="ShoulderEnd" parent="." instance=ExtResource( 5 )]
+
+[node name="Joint" parent="ShoulderEnd/Collision" index="0"]
+node_a = NodePath("../..")
+node_b = NodePath("../../../ArmPeice")
+
+[node name="Shoulder" type="Sprite" parent="ShoulderEnd"]
+texture = ExtResource( 2 )
+
+[editable path="ArmPeice"]
+[editable path="ArmPeice2"]
+[editable path="ArmPeice3"]
+[editable path="HandEnd"]
+[editable path="ShoulderEnd"]

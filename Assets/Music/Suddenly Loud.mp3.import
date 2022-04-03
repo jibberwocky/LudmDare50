@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Suddenly Loud.mp3-b563edde3c3b9efe5418af6420908b32.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Suddenly Loud.mp3"
+dest_files=[ "res://.import/Suddenly Loud.mp3-b563edde3c3b9efe5418af6420908b32.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

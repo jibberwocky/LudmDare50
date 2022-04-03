@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Art/foreground_buildings.png" type="Texture" id=1]
+[ext_resource path="res://Scene_elements/ForegroundBuildings.gd" type="Script" id=2]
+
+[node name="ForegroundBuildings" type="Sprite"]
+position = Vector2( 150, 0 )
+z_index = 2
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( -252, 80, -189, 25, -209, -55, -639, -47, -639, 179, -360, 177, -352, 177, -260, 86 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2( 894, 2 )
+rotation = -6.28319
+polygon = PoolVector2Array( -252, 80, -255, -37, -782, -46.0001, -793, 34.9999, -646, 179, -360, 177, -352, 177, -251, 179 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

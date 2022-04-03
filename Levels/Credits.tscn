@@ -1,0 +1,299 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Themes/Button Theme.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Fonts/Pixel-Western.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Art/Background_BG.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Art/sky.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Art/The Sun.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Music/Main Menu.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Levels/Credits.gd" type="Script" id=7]
+
+[sub_resource type="DynamicFont" id=3]
+size = 14
+outline_size = 3
+outline_color = Color( 0.666667, 0.027451, 0.027451, 1 )
+extra_spacing_top = 12
+extra_spacing_char = 1
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=4]
+default_font = SubResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 8
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_top = 12
+extra_spacing_char = 1
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=6]
+default_font = SubResource( 5 )
+
+[sub_resource type="Animation" id=1]
+resource_name = "Appear"
+length = 15.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control:anchor_top")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -1.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -2.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Control:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1, 10 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1, 2 ), Vector2( -1, 2 ), Vector2( -1, -374 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Control/TheSun:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1, 1.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.54902 ), Color( 2, 2, 2, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control:anchor_top")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -80.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Control:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1, 2 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Control/TheSun:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.54902 ) ]
+}
+
+[node name="AssetCredits" type="Control"]
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sky" type="Sprite" parent="."]
+position = Vector2( 163, 136 )
+texture = ExtResource( 4 )
+
+[node name="BackgroundBg" type="Sprite" parent="Sky"]
+position = Vector2( 45, -9 )
+texture = ExtResource( 3 )
+
+[node name="Control" type="Control" parent="."]
+anchor_top = -1.0
+margin_left = -1.0
+margin_top = 2.0
+margin_right = 320.0
+margin_bottom = 183.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TheSun" type="Sprite" parent="Control"]
+modulate = Color( 1, 1, 1, 0.54902 )
+position = Vector2( 160, 48 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="Control"]
+margin_left = 2.0
+margin_top = -13.0
+margin_right = 321.0
+margin_bottom = 41.0
+theme = SubResource( 4 )
+text = "Asset Credits"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -158.5
+margin_top = -62.5
+margin_right = 160.5
+margin_bottom = 87.5
+theme = SubResource( 6 )
+text = "Never High Noon
+Created for Ludum Dare 50
+-Jibberwocky-
+
+- Font -
+ Pixel Western Font - By  Mirz123 https://www.dafont.com/pixel-western.font
+
+- Music - 
+Generated With Abundant Music
+https://pernyblom.github.io/abundant-music/index.html
+
+-Engine-
+Godot
+
+-Artwork created in-
+Aesprite
+https://www.aseprite.org/"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Appear"
+anims/Appear = SubResource( 1 )
+anims/RESET = SubResource( 2 )
+
+[node name="Control2" type="Control" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_top = -1.0
+margin_right = 319.0
+margin_bottom = 179.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play_button" type="Button" parent="Control2"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 126.0
+margin_top = -167.0
+margin_right = 126.0
+margin_bottom = -159.0
+rect_pivot_offset = Vector2( 51, 6 )
+theme = ExtResource( 1 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -80.0
+
+[connection signal="pressed" from="Control2/Play_button" to="." method="_on_Play_button_pressed"]

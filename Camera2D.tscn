@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Camera2D.gd" type="Script" id=1]
+
+[node name="Camera2D" type="Camera2D"]
+current = true
+limit_left = -494
+limit_top = -54
+limit_right = 366
+limit_bottom = 178
+drag_margin_v_enabled = true
+smoothing_enabled = true
+drag_margin_top = 0.01
+drag_margin_bottom = 0.01
+script = ExtResource( 1 )
